@@ -91,7 +91,7 @@ Sub PatternTables()
     
     'Get the first 4 colors of selected pallete colors
     For i = 0 To 3
-        MemCopy mRgb(0), pal(VRAM(i + &H3F00)), Len(pal(VRAM(i + &H3F00)))
+        MemCopy mRgb(0), Pal(VRAM(i + &H3F00)), Len(Pal(VRAM(i + &H3F00)))
         DrawPal(i) = RGB(mRgb(2), mRgb(1), mRgb(0))
     Next i
     

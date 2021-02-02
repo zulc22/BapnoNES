@@ -1219,14 +1219,14 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 Private Sub Form_Load()
     For n = 0 To 63
-        MemCopy mRgb(0), pal(n), Len(pal(n))
+        MemCopy mRgb(0), Pal(n), Len(Pal(n))
         pColor(n).BackColor = RGB(mRgb(2), mRgb(1), mRgb(0))
     Next n
     DrawSPColors
 End Sub
 Sub DrawSPColors()
     For n = 0 To 31
-        MemCopy mRgb(0), pal(VRAM(n + &H3F00)), Len(pal(VRAM(n + &H3F00)))
+        MemCopy mRgb(0), Pal(VRAM(n + &H3F00)), Len(Pal(VRAM(n + &H3F00)))
         spColor(n).BackColor = RGB(mRgb(2), mRgb(1), mRgb(0))
     Next n
 End Sub

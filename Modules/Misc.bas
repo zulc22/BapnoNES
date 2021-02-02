@@ -552,12 +552,20 @@ Public Sub RecordMovie(Index As Long)
         End Select
         Put #1, , nt
         Record = True
-    ExibeMsg "Gravando filme"
+    If Lang = 1 Then
+        ExibeMsg "Recording movie"
+    Else
+        ExibeMsg "Gravando filme"
+    End If
 End Sub
 Public Sub StopRecording()
     Close #1
     Record = False
-    ExibeMsg "Gravação parada"
+    If Lang = 1 Then
+        ExibeMsg "Recording ended"
+    Else
+        ExibeMsg "Gravação parada"
+    End If
 End Sub
 Public Function LoadCfg() As Boolean
     Gamepad1 = Val(GetSetting("YoshiNES", "Control", "Gamepad 1"))
@@ -605,7 +613,7 @@ Public Function LoadCfg() As Boolean
     Recents(3) = GetSetting("YoshiNES", "Misc", "Recent 4")
     Recents(4) = GetSetting("YoshiNES", "Misc", "Recent 5")
     PalName = GetSetting("YoshiNES", "Misc", "Pal Name")
-    Lang = GetSetting("YoshiNES", "Misc", "Language", 0)
+    Lang = GetSetting("YoshiNES", "Misc", "Language", 1)
     frmNES.ResScreen
 End Function
 Public Function SaveCfg()

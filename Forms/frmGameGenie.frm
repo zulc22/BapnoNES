@@ -80,9 +80,9 @@ Begin VB.Form frmGameGenie
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2205
-         ItemData        =   "frmGameGenie.frx":058A
+         ItemData        =   "frmGameGenie.frx":014A
          Left            =   240
-         List            =   "frmGameGenie.frx":058C
+         List            =   "frmGameGenie.frx":014C
          TabIndex        =   1
          Top             =   360
          Width           =   2175
@@ -99,11 +99,12 @@ Private Sub CmdOK_Click()
 End Sub
 Private Sub Command1_Click()
     Dim TempValue As String
-    If Lang = 1 Then
-        TempValue = InputBox("Type Game Genie code (6 characters):", "Add code")
-    Else
-        TempValue = InputBox("Digite o código Game Genie (6 caracteres):", "Adicionar código")
-    End If
+    Select Case Lang
+        Case 1
+            TempValue = InputBox("Type Game Genie code (6 characters):", "Add code")
+        Case 0
+            TempValue = InputBox("Digite o código Game Genie (6 caracteres):", "Adicionar código")
+    End Select
     If Len(TempValue) = 6 Then ggCodes = ggCodes & UCase(TempValue): lstGg.AddItem (UCase(TempValue))
 End Sub
 Private Sub Command2_Click()
@@ -224,14 +225,22 @@ Private Sub Form_Load()
         i = i + 5
     Next i
     
-    If Lang = 1 Then
-        Command1.Caption = "&Add"
-        Command6.Caption = "&Decode"
-        Command4.Caption = "Erase first"
-        Command5.Caption = "Erase last"
-        Command2.Caption = "&Clear"
-        Frame2.Caption = "Code list"
-    End If
+    Select Case Lang
+        Case 1
+            Command1.Caption = "&Add"
+            Command6.Caption = "&Decode"
+            Command4.Caption = "Erase first"
+            Command5.Caption = "Erase last"
+            Command2.Caption = "&Clear"
+            Frame2.Caption = "Code list"
+        Case 0
+            Command1.Caption = "&Adicionar"
+            Command6.Caption = "&Decodificar"
+            Command4.Caption = "Apagar primeiro"
+            Command5.Caption = "A&pagar tudo"
+            Command2.Caption = "&Clear"
+            Frame2.Caption = "Code list"
+    End Select
 End Sub
 Private Sub Form_Unload(Cancel As Integer)
     If CPUPaused = True Then frmNES.mnuCPUPause_Click

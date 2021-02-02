@@ -601,7 +601,7 @@ End Sub
 Private Sub Form_Load()
     Dim i As Integer
     
-    VERSION = "YoshiNES v" & App.Major & "." & App.Minor
+    VERSION = "BapnoNES v" & App.Major & "." & App.Minor
     Caption = VERSION
     
     DoSound = True
@@ -833,7 +833,7 @@ Private Sub mnuSelLang_Click(Index As Integer)
     Dim i As Integer
     If Index <> Lang Then
         Lang = Index
-        MsgBox "Language has been changed successfully!" & vbCrLf & "You must restart emulator for changes to take effect!", vbInformation, "Done"
+        SetLang
     End If
     For i = 0 To mnuSelLang.UBound
         mnuSelLang(i).Checked = False
@@ -1157,7 +1157,7 @@ Private Sub SetLang()
             mnuEmulation.Caption = "&Options"
             mnuCPUPause.Caption = "Pause (P)"
             mnuReset.Caption = "Reset"
-            mnuFull.Caption = "Full Screen (Alt + Return)"
+            mnuFull.Caption = "Full Screen (Alt + Enter)"
             mSmoothTop.Caption = "Filters"
             mSmooth(0).Caption = "None"
             mLayersTop.Caption = "Layers"
@@ -1189,6 +1189,56 @@ Private Sub SetLang()
             'Help
             mnuHelp.Caption = "&Help"
             mnuHelpAbout.Caption = "&About"
+        Case 0
+            'File
+            mnuFile.Caption = "&Arquivo"
+            mnuFileLoad.Caption = "&Abrir ROM..."
+            mnuFileFree.Caption = "&Fechar ROM"
+            mSave.Caption = "Salvar rápido (F5)"
+            mRestore.Caption = "Carregar rápido (F7)"
+            mnuWriteVROM.Caption = "&Gravar VROM"
+            mnuFileRomInfo.Caption = "&Info. da ROM..."
+            mnuMovies.Caption = "&Filme"
+            mnuStartRecord.Caption = "Graphar"
+            mnuPlayMovie.Caption = "Reproduzir"
+            mnuRecentRom.Caption = "Recente"
+            mnuFileExit.Caption = "Exit"
+            'Options
+            mnuEmulation.Caption = "&Opções"
+            mnuCPUPause.Caption = "Pausar (P)"
+            mnuReset.Caption = "Reiniciar"
+            mnuFull.Caption = "Tela Cheia (Alt + Enter)"
+            mSmoothTop.Caption = "Filtros"
+            mSmooth(0).Caption = "Nenhum"
+            mLayersTop.Caption = "Camadas"
+            mLayer1.Caption = "Fundo"
+            mnuShowStatus.Caption = "Exibir FPS"
+            mPalette.Caption = "Paleta"
+            mnuRandomColors.Caption = "Cores aleatórias"
+            mnuInv.Caption = "Inverter cores"
+            mnuViewColors.Caption = "Editar cores..."
+            mnuSound.Caption = "Áudio"
+            mnuCh.Caption = "Canais"
+            mMute.Caption = "Muto"
+            mexec.Caption = "CPU Speed"
+            mIdle.Caption = "Idle detection"
+            mExecV(4).Caption = "75% = Abaixo do normal"
+            mExecV(5).Caption = "50% = Lento"
+            mExecV(6).Caption = "25% = Muido lento"
+            mAutoSpeed.Caption = "Limitar a 60 fps"
+            mnuEmuConfg.Caption = "Controles"
+            mnuCSlot1.Caption = "Entrada 1"
+            mnuCSlot2.Caption = "Entrada 2"
+            mnuC1k.Caption = "Teclado"
+            mnuC2k.Caption = "Teclado"
+            mnuEmuConfgKeys.Caption = "Configurar..."
+            mnuDipOn.Caption = "Lig."
+            mnuDipOff.Caption = "Desl."
+            'Tools
+            mnuTools.Caption = "&Ferramentas"
+            'Help
+            mnuHelp.Caption = "&Ajuda"
+            mnuHelpAbout.Caption = "&Sobre"
     End Select
 End Sub
 Public Sub UpdateFPS()

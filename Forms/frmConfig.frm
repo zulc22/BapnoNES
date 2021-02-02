@@ -457,7 +457,7 @@ Begin VB.Form frmConfig
    Begin VB.Image NesControl 
       Height          =   1440
       Left            =   705
-      Picture         =   "frmConfig.frx":058A
+      Picture         =   "frmConfig.frx":014A
       Top             =   10
       Width           =   3750
    End
@@ -486,24 +486,46 @@ End Sub
 Private Sub Form_Load()
     Dim TmpStr As Long
     
-    Combo1.AddItem ("Nenhum")
-    Combo2.AddItem ("Nenhum")
-    Combo3.AddItem ("Nenhum")
-    Combo4.AddItem ("Nenhum")
-    Combo5.AddItem ("Nenhum")
-    Combo6.AddItem ("Nenhum")
-    Combo7.AddItem ("Nenhum")
-    Combo8.AddItem ("Nenhum")
+    If Lang = 1 Then
+        Caption = VERSION & ": Key Config"
+        NONE$ = "None"
+        BTN$ = "Button "
+        Frame4.Caption = "Controller 1 (Joystick)"
+        Frame2.Caption = "Controller 2 (Joystick)"
+        Frame3.Caption = "Controller 1 (Keyboard)"
+        Frame1.Caption = "Controller 2 (Keyboard)"
+    Else
+        Caption = VERSION & ": Configuração de teclas"
+        NONE$ = "Nenhum"
+        BTN$ = "Botão "
+        Frame4.Caption = "Controle 1 (Joystick)"
+        Frame2.Caption = "Controle 2 (Joystick)"
+        Frame3.Caption = "Controle 1 (Teclado)"
+        Frame1.Caption = "Controle 2 (Teclado)"
+    End If
+    
+    ' This is why I hate Visual Basic
+    
+    Combo1.AddItem (NONE$)
+    Combo2.AddItem (NONE$)
+    Combo3.AddItem (NONE$)
+    Combo4.AddItem (NONE$)
+    Combo5.AddItem (NONE$)
+    Combo6.AddItem (NONE$)
+    Combo7.AddItem (NONE$)
+    Combo8.AddItem (NONE$)
+    
     For TmpStr = 1 To 12
-        Combo1.AddItem ("Botão " & TmpStr)
-        Combo2.AddItem ("Botão " & TmpStr)
-        Combo3.AddItem ("Botão " & TmpStr)
-        Combo4.AddItem ("Botão " & TmpStr)
-        Combo5.AddItem ("Botão " & TmpStr)
-        Combo6.AddItem ("Botão " & TmpStr)
-        Combo7.AddItem ("Botão " & TmpStr)
-        Combo8.AddItem ("Botão " & TmpStr)
+        Combo1.AddItem (BTN$ & TmpStr)
+        Combo2.AddItem (BTN$ & TmpStr)
+        Combo3.AddItem (BTN$ & TmpStr)
+        Combo4.AddItem (BTN$ & TmpStr)
+        Combo5.AddItem (BTN$ & TmpStr)
+        Combo6.AddItem (BTN$ & TmpStr)
+        Combo7.AddItem (BTN$ & TmpStr)
+        Combo8.AddItem (BTN$ & TmpStr)
     Next TmpStr
+    
     Combo1.ListIndex = pad_ButA: Combo2.ListIndex = pad_ButB: Combo3.ListIndex = pad_ButSel: Combo4.ListIndex = pad_ButSta
     Combo5.ListIndex = pad2_ButA: Combo6.ListIndex = pad2_ButB: Combo7.ListIndex = pad2_ButSel: Combo8.ListIndex = pad2_ButSta
     If Gamepad1 > 0 Then
@@ -520,6 +542,8 @@ Private Sub Form_Load()
         Frame2.Visible = False
         Frame1.Visible = True
     End If
+    
+    ' WHY
     
     Combo1.ListIndex = pad_ButA: Combo2.ListIndex = pad_ButB: Combo3.ListIndex = pad_ButSel: Combo4.ListIndex = pad_ButSta
     txtUp.Text = nes_ButUp: txtDown.Text = nes_ButDn: txtLeft.Text = nes_ButLt: txtRight.Text = nes_ButRt

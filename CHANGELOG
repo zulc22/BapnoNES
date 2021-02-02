@@ -2,7 +2,15 @@ Supported mappers:
 
 1-4, 6-13, 15-19, 21-24, 26, 32-34, 40, 45, 47, 51, 53, 57, 61, 64-66, 68-69, 71, 73-75, 78-79, 83, 85, 88, 90-91, 94-95, 99-100, 115, 117-118, 130, 160, 151-152, 158, 185, 188, 200, 211-212, 226-228, 230-232, 245, 250, 255
 
-v0.7
+v0.8
+
+- English translation is now default
+- Language can now be changed without application restart
+- Improved English translation
+- Forked as BapÐ¸oNES
+- This program hasn't been touched for 10 whole years! (I'm starting to see why...)
+
+(YoshiNES) v0.7
 
 - Added Mapper 5 (partial, Castlevania 3 show sprites only :-( )
 - Added Mapper 58
@@ -14,7 +22,7 @@ v0.7
 - Improved Hex Viewer
 - Code optimized
 
-v0.4
+(YoshiNES) v0.4
 
 - Rearranged the menus
 - Added pallete viewer
@@ -25,12 +33,12 @@ v0.4
 - Fixed mapper 146, now working perfect
 - Some minor bugfixes
 
-v0.3
+(YoshiNES) v0.3
 
 - Removed theme (make the exe too large)
 - New mappers added, like 90 and a lot of pirate ones
 
-v0.2
+(YoshiNES) v0.2
 
 English:
 
@@ -42,17 +50,17 @@ English:
 - Changed the menu to look good in new theme
 - Fullscreen code complete! Now you can play in real fullscreen.
 
-Português:
+Portuguï¿½s:
 
-- Agora você pode editar as cores da palheta, mas não salvar
+- Agora vocï¿½ pode editar as cores da palheta, mas nï¿½o salvar
 - Agora com um editor hexadecimal no lugar do antigo
 - Agora com um tema legal sinza (isso explica o exe ter o dobro do tamanho)
 - Com alguns mappers piratas adicionados (86, 87, 113, 184) e outros
-- Agora você pode ver o nivel do som de acordo com o tom (barra)
+- Agora vocï¿½ pode ver o nivel do som de acordo com o tom (barra)
 - Menu re-organizado para caber no novo tema
-- O código de Tela Cheia está completo! Agora sim!
+- O cï¿½digo de Tela Cheia estï¿½ completo! Agora sim!
 
-v0.1
+(YoshiNES) v0.1
 
 Everything is new! First version. This emulator is based on BasicNes. For more info, look on
 original BasicNES Docs. This emulator is made by Don Jarret and David Finch. I added some options
