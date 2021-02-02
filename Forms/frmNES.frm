@@ -51,7 +51,7 @@ Begin VB.Form frmNES
    Begin VB.Image Splash 
       Height          =   3360
       Left            =   0
-      Picture         =   "frmNES.frx":2AFA
+      Picture         =   "frmNES.frx":014A
       Stretch         =   -1  'True
       Top             =   0
       Width           =   3840
