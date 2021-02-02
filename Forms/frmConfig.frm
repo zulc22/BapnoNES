@@ -486,6 +486,9 @@ End Sub
 Private Sub Form_Load()
     Dim TmpStr As Long
     
+    Dim NONE$
+    Dim BTN$
+    
     If Lang = 1 Then
         Caption = VERSION & ": Key Config"
         NONE$ = "None"
